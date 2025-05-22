@@ -1,0 +1,163 @@
+body {
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  background-image: url('../images/fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: #212121;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Encabezados */
+.card {
+  border: none;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #f3e5ab;
+}
+
+.card-header {
+  background: linear-gradient(90deg, #3e2723, #6d4c41);
+  color: #fff;
+  padding: 20px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #d7ccc8;
+}
+
+/* Títulos */
+h5 {
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 20px;
+  color: #ede9e7;
+}
+
+/* Etiquetas */
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: #451f13;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  font-size: 17px;
+  padding: 12px 15px;
+  width: 100%;
+  border: 2px solid #bcaaa4;
+  border-radius: 10px;
+  background-color: #fef8e7;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: #fffef5;
+  border-color: #81c784;
+  outline: none;
+  box-shadow: 0 0 8px rgba(129, 199, 132, 0.4);
+}
+
+/* Botones */
+.btn-primary,
+.btn-secondary {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #66bb6a, #43a047);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #4caf50, #2e7d32);
+  transform: scale(1.03);
+}
+
+.btn-secondary {
+  background: linear-gradient(to right, #a1887f, #8d6e63);
+  border: none;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to right, #8d6e63, #6d4c41);
+  transform: scale(1.03);
+}
+
+/* Lista de aficiones */
+ul#listaAficiones {
+  max-height: 130px;
+  overflow-y: auto;
+  padding-left: 0;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+ul#listaAficiones li {
+  padding: 10px 16px;
+  margin-bottom: 8px;
+  background-color: #fffde7;
+  border: 1px solid #c37b3c;
+  border-radius: 10px;
+  list-style-type: none;
+  transition: background 0.3s;
+}
+
+ul#listaAficiones li:hover {
+  background-color: #fff8dc;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #b71c1c;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  .card-header {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  ul#listaAficiones {
+    max-height: 100px;
+  }
+}

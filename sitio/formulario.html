@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario de Registro</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <div class="card">
+          <div class="card-header" style="background-color: #6d4c41; color: #fff;">
+            <h3 class="card-title mb-0">Formulario de Registro</h3>
+          </div>
+          <div class="card-body">
+            <form id="registroForm" novalidate>
+              <!-- Información del Usuario -->
+              <div class="card mb-3">
+                <div class="card-header bg-light">
+                  <h5>Información del usuario</h5>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="username" class="form-label">
+                      <i class="fa-regular fa-user-circle me-2"></i>Nombre de Usuario
+                    </label>
+                    <input type="text" class="form-control" id="username" name="username" />
+                    <div id="usernameError" class="error-message"></div>
+                    <small class="form-text text-muted">
+                      Debe comenzar con una letra, entre 5-10 caracteres y puede tener dígitos solo al final.
+                    </small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">
+                      <i class="fa-solid fa-key me-2"></i>Contraseña
+                    </label>
+                    <input type="password" class="form-control" id="password" name="password" />
+                    <div id="passwordError" class="error-message"></div>
+                    <small class="form-text text-muted">
+                      entre 3-6 caracteres, se necesita al menos un dígito y una letra.
+                    </small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">
+                      <i class="fa-solid fa-check-double me-2"></i>Confirme su Contraseña
+                    </label>
+                    <small class="form-text text-muted">
+                      Confirme su contraseña para poder seguir.
+                    </small>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" />
+                    <div id="confirmPasswordError" class="error-message"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Datos Personales -->
+              <div class="card mb-3">
+                <div class="card-header bg-light">
+                  <h5>Datos Personales</h5>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="telefono" class="form-label">
+                      <i class="fa-solid fa-phone-volume me-2"></i>Número de Teléfono
+                    </label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="+56912345678" />
+                    <div id="telefonoError" class="error-message"></div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="comuna" class="form-label">
+                      <i class="fa-solid fa-map-location-dot me-2"></i>Indique su Comuna
+                    </label>
+                    <select class="form-select" id="comuna" name="comuna">
+                      <option value="">puerto octay</option>
+                      <option value="santiago">Osorno</option>
+                      <option value="providencia">Temuco</option>
+                      <option value="nunoa">Chillan</option>
+                      <option value="las_condes">Concepcion</option>
+                      <option value="vitacura">puerto varas</option>
+                      <option value="la_florida">Paillaco</option>
+                      <option value="maipu">Reumen</option>
+                      <option value="puente_alto">Valdivia</option>
+                      <option value="san_bernardo">Frutillar</option>
+                      <option value="quilicura">Tralalero</option>
+                    </select>
+                    <div id="comunaError" class="error-message"></div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="website" class="form-label">
+                      <i class="fa-brands fa-chrome me-2"></i>Página Web Personal
+                    </label>
+                    <input type="text" class="form-control" id="website" name="website" placeholder="https://ejemplo.com" />
+                    <div id="websiteError" class="error-message"></div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="direccion" class="form-label">
+                      <i class="fa-solid fa-location-dot me-2"></i>Dirección
+                    </label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" />
+                    <div id="direccionError" class="error-message"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aficiones -->
+              <div class="card mb-3">
+                <div class="card-header bg-light">
+                  <h5>Aficiones</h5>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="nuevaAficion" class="form-label">
+                      <i class="fa-regular fa-face-smile me-2"></i> Aficiónes
+                    </label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="nuevaAficion" name="nuevaAficion" />
+                      <button type="button" class="btn btn-secondary" id="agregarAficion">Agregar</button>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <small class="form-text text-muted">
+                      Agruegue mínimo 2 aficiones!!.
+                    </small>
+                    <ul id="listaAficiones" class="list-group"></ul>
+                    <div id="aficionesError" class="error-message"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Botón -->
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
